@@ -1,11 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>SPA Universe</title>
+
+  <link rel="stylesheet" href="./styles/style.css">
+
 </head>
 <body>
+
+  <header>
+    <img src="./assets/logo.svg" alt="Logo espiral universe">
+
+    <nav>
+      <a class="selected" href="/" onclick="route()">Home</a>
+      <a class="" href="/universe" onclick="route()">O Universo</a>
+      <a class="" href="/explorer" onclick="route()">Exploração</a>
+    </nav>
+  </header>
   
+  <div id="app"></div>
+
+
+  <!-- <script type="module" src="./src/index.js"></script> -->
+
+  <script>
+    const routes = {
+      '/': '/pages/home.html',
+      '/universe': '/pages/universe.html',
+      '/explorer': '/pages/explorer.html',
+      404: '/pages/404.html',
+    }
+
+    function route(event) {
+      event = event || window.event
+      event.preventDefault()
+
+      window.history.pushState({}, '', event.target.href)
+
+      handle()
+    }
+
+    function handle() {
+      const { pathname } = window.location
+      const route = routes[pathname] || router[404]
+
+      fetch(route)
+      .then(data => data.text())
+      .then(html => {
+        document.querySelector('#app').innerHTML = html
+      })
+
+      console.log(route)
+    }
+
+    handle()
+
+  </script>
 </body>
 </html>
