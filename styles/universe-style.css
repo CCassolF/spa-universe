@@ -1,0 +1,28 @@
+body {
+  background-image: url('../assets/img-02.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+#container {
+  margin: 6.3rem 10.2rem;
+  width: 64.8rem;
+}
+
+h1 {
+  color: #E1E1E6;
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 6rem;
+}
+
+p {
+  margin-top: 1.6rem;
+
+  color: #E1E1E6;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.8rem;
+}

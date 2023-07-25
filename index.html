@@ -20,9 +20,9 @@
     <img src="./assets/logo.svg" alt="Logo espiral universe">
 
     <nav>
-      <a class="selected" href="/" onclick="route()">Home</a>
-      <a class="" href="/universe" onclick="route()">O Universo</a>
-      <a class="" href="/explorer" onclick="route()">Exploração</a>
+      <a id="home" class="menu-item selected" href="/" onclick="route(), selectMenuItem(this)">Home</a>
+      <a id="universe" class="menu-item" href="/universe" onclick="route(), selectMenuItem(this)">O Universo</a>
+      <a id="explorer" class="menu-item" href="/explorer" onclick="route(), selectMenuItem(this)">Exploração</a>
     </nav>
   </header>
   
@@ -30,5 +30,6 @@
 
 
   <script type="module" src="./src/index.js"></script>
+  <script src="./src/event.js"></script>
 </body>
 </html>
